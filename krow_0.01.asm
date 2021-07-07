@@ -16,7 +16,7 @@ macro goto_if(a)
 	dw $000D, <a>
 endmacro
 
-namespace kudgel
+namespace krow
 
 org $B6F9CD
 
