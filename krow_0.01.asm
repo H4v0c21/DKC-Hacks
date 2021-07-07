@@ -16,7 +16,7 @@ macro goto_if(a)
 	dw $000D, <a>
 endmacro
 
-
+org $36F9CD
 
 1A00 3C00 0002
 0500 0102 5D02
