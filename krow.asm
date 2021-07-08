@@ -25,8 +25,9 @@ macro krow_layer_priority(layer_value)
 	dw $0004, <layer_value>
 endmacro
 
-macro animation(a, b)
-	dw $0005, <a>, <b>
+macro animation(head_animation, body_animation)
+	;sets animation for krow's head and body
+	dw $0005, <head_animation>, <body_animation>
 endmacro
 
 macro grab_egg()
@@ -67,12 +68,13 @@ macro goto_if(a)
 	dw $000D, <a>
 endmacro
 
-macro unknowne()
+macro rain_eggs()
+	;shakes screen and rains eggs from nest
 	dw $000E
 endmacro
 
-macro unknownf(a)
-	dw $000F, <a>
+macro unknownf(body_animation)
+	dw $000F, <body_animation>
 endmacro
 
 macro unknown10()
@@ -111,8 +113,9 @@ macro unknown19(a, b)
 	dw $0019, <a>, <b>
 endmacro
 
-macro wait(a, b)
-	dw $001A, <a>, <b>
+macro wait(timer, body_animation)
+	;wait x amount of frames, body_animation specifies the idle animation of the body while waiting
+	dw $001A, <timer>, <body_animation>
 endmacro
 
 macro egg_layer_priority(a)
@@ -231,7 +234,7 @@ pattern2:
 %unknown15($FFEC, $FFEC)
 %unknown16()
 %animation($0200, $0209)
-%unknowne()
+%rain_eggs()
 %unknown10()
 %fly_to($01F0, $019F, $0002)
 %fly_to($0200, $019F, $0001)
@@ -284,7 +287,7 @@ pattern2:
 %unknown15($0014, $FFEC)
 %unknown16()
 %animation($0200, $0209)
-%unknowne()
+%rain_eggs()
 %unknown10()
 %fly_to($0170, $019F, $0002)
 %fly_to($0160, $019F, $0001)
