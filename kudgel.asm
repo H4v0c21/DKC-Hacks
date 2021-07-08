@@ -1,23 +1,22 @@
 ;Written by H4v0c21
 ;Derived from https://github.com/FredYeye/Unveiled K. Rool Script
 ;Original asm file by FredYeye and emptysys
-;7/7/21
+;7/8/21
 
 math pri on : math round off : hirom
 
 macro goto(offset)
-	;jumps to specified address
+	;jumps to a specified command address
 	;goto 0 is a special case and jumps to the current pattern's starting point
 	dw $0002, <offset>
 endmacro
 
 macro unk1(a, b)
-	;wait x amount of frames
 	dw $000B, <a>, <b>
 endmacro
 
 macro goto_if(a)
-	;wait x amount of frames
+	;jumps to a specified command address if a condition is met
 	dw $000D, <a>
 endmacro
 
@@ -87,7 +86,6 @@ macro jump(a, speeda, speedb, acceleration)
 endmacro
 
 namespace kudgel
-
 
 ;objects
 !tnt_barrel = $1D8A
@@ -365,6 +363,3 @@ phase_tnt_drop:
 	%goto(0)
 
 namespace off
-
-
-
