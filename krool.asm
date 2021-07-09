@@ -138,9 +138,8 @@ namespace krool1
 org $B6908D : script_1_entry: ;0x36908D
 	%wait(100)
 	%goto(pattern1)
-
+	
 	dw pattern1 ;leftover data?
-
 
 intro: ;intro cutscene
 	%dk_intro(3,0,0,0,0,0)
@@ -334,7 +333,6 @@ pattern9: ;purple gas
 	%vacuum2(100)
 	%goto(0)
 	
-	
 ;---------- k rool 1 pattern locations
 
 ;org $B6C2F9 : dw pattern9, pattern8, pattern7, pattern6, pattern5, pattern4, pattern3, pattern2, pattern1
@@ -364,8 +362,6 @@ org $B69355 : script_2_entry: ;0x369355
 	dw .loop
 
 namespace off
-
-
 
 ;---------- k rool cannon backfire speed definitions
 
@@ -516,7 +512,3 @@ dw $0280, $0000, $0280, $0000, $0000, $0000, $0096, $0010, $95ED ;straight spike
 
 dw $01C0, $0000, $01C0, $0000, $0000, $0000, $0258, $0000, $E820 ;straight cannon ball barrel
 ;----------
-
-
-
-
