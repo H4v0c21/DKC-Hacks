@@ -1,2 +1,2 @@
-# DKC2-Hacks
-Various DKC 2 hacking documentation and other tools.
+# DKC-Hacks
+A collection of small patches and tweaks for the DKC Trilogy.
